@@ -1,15 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
-require('./services/passport');
 require('./models/User');
+require('./services/passport');
 
-var options = {
-	server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-	replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }
-};
+// var options = {
+// 	server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+// 	replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }
+// };
 
-mongoose.connect(keys.mongoURI, options);
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
